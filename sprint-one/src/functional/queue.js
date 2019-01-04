@@ -16,9 +16,8 @@ var Queue = function() {
     if (counter > 0) {
       let temp = storage[0];
       delete storage[0];
-      for (let key in storage) {
+      for (let key = 0; key < counter; key++) {
         if (storage[key + 1]) {
-          console.log(storage[key]);
           storage[key] = storage[key + 1];
         }
       }
