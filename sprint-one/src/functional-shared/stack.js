@@ -28,15 +28,3 @@ var stackMethods = {
     }
   }
 };
-
-// stackMethods.push = function(value) {
-//   this.storage[counter] = value;
-//   this.storage.counter += 1;
-//   return this.storage;
-// }
-
-// stackMethods.size = function() {
-//   return this.counter;
-// }
-
-
