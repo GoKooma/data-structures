@@ -52,4 +52,9 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should return null when all elements are removed', function() {
+    linkedList.addToTail(4);
+    linkedList.removeHead();
+    expect(linkedList.head).to.equal(null);
+  })
 });

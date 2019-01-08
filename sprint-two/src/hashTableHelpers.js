@@ -56,4 +56,7 @@ var getIndexBelowMaxForKey = function(str, max) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * 
+ * Because the hash function is looping through all elements in the passed
+ * in string, the time complexity should be O(n).
  */

@@ -2,7 +2,7 @@ describe('tree', function() {
   var tree;
 
   beforeEach(function() {
-    tree = Tree();
+    tree = Tree(2);
   });
 
   it('should have methods named "addChild" and "contains", and a property named "value"', function() {
@@ -41,4 +41,19 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('Should return value of the tree', function() {
+    expect(tree.value).to.equal(2);
+  });
+
+  it('Should return the parent of the child', function() {
+    tree.addChild(5);
+    expect(tree.children[0].parent.value).to.equal(2);
+  });
+
+  it('Should disassociate with the parent in both ways', function() {
+    tree.addChild(5);
+    let temp = tree.children[0].removeFromParent();
+    expect(temp.parent).to.equal(null);
+    expect(tree.children.length).to.equal(0);
+  });
 });
