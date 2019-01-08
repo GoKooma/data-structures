@@ -28,4 +28,7 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * 
+ * The time complexity for the set is O(1) for insertion, deletion and lookup
+ * time.
  */

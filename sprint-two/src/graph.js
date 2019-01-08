@@ -88,6 +88,10 @@ Graph.prototype.forEachNode = function (cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * 
+ * Insertion and Lookup has the time complexity of O(1) whereas
+ * deletion has time complexity of O(n) because all items have
+ * to be looked up in the worst case.
  */
 
 

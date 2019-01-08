@@ -76,6 +76,10 @@ var Node = function(value) {
 /*
  * Complexity: What is the time complexity of the above functions?
  * 
- * Except indexing, the singly linked list has time complexity of O(1)
+ * The singly linked list has time complexity of O(1) for adding to tail and 
+ * removing from head. But contains function, insertion at the middle or 
+ * removing from the middle in the of singly linked list has time complexity 
+ * of O(n), since it would have to go through all the elements in the 
+ * worst case.
  * 
  */

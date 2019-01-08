@@ -1,10 +1,8 @@
 var Tree = function(value) {
   var newTree = {};
   newTree.value = value;
-
   // your code here
-  newTree.children = [];  // fix me
-
+  newTree.children = [];
   extend(newTree, treeMethods);
 
   return newTree;
@@ -45,7 +43,9 @@ treeMethods.contains = function(target) {
 /*
  * Complexity: What is the time complexity of the above functions?
  * 
- * The time complexity would be O(n) since it would have to visit all elements
- * in the worst case
+ * The time complexity of contains function, insertion in the middle of
+ * the tree, and removing from the middle of the tree would be O(n) since 
+ * all the elements have to be visited in the worst case. Adding a child 
+ * to the current tree will have time complexity of O(1).
  * 
  */
