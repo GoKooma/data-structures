@@ -6,9 +6,21 @@ var HashTable = function() {
   this.size = 0;
 };
 
-HashTable.prototype.rehash = function() {
-  
-
+HashTable.prototype.rehash = function(k, v) {
+  let hashTable = this;
+  let tempStorage = this._storage;
+  this._storage = LimitedArray(this._limit);
+  tempStorage.each(function(item, i, storage) {
+    if (item !== undefined) {
+      for (let i = 0; i < item.length; i++) {
+        hashTable.insert(item[i][0], item[i][1]);
+      }
+    }
+    
+  });
+  if (k !== undefined && v !== undefined) {
+    hashTable.insert(k,v);
+  }
 }
 
 HashTable.prototype.insert = function(k, v) {
@@ -17,21 +29,9 @@ HashTable.prototype.insert = function(k, v) {
   if (this.size + 1 > (this._limit * 3 / 4)) {
     this.size = 0;
     this._limit *= 2;
-    let hashTable = this;
-    // console.log(this);
-    let tempStorage = this._storage;
-    this._storage = LimitedArray(this._limit);
-  
-    tempStorage.each(function(item, i, storage) {
-      if (item !== undefined) {
-        for (let i = 0; i < item.length; i++) {
-          hashTable.insert(item[i][0], item[i][1]);
-        }
-      }
-    });
-
-    // this.rehash();
+    this.rehash(k, v);
   }
+
   if (this._storage.get(index) === undefined) {
     let newBucket = [[k,v]];
     this._storage.set(index, newBucket);
